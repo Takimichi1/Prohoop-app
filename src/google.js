@@ -38,8 +38,11 @@ export async function initGoogleAPI() {
           apiKey: GOOGLE_CONFIG.API_KEY,
           discoveryDocs: [DISCOVERY_DOC],
         });
-        gapiInited = true;
-        if (gisInited) resolve();
+        gisInited = true;
+if (localStorage.getItem('prohoop_signed_in') === '1') {
+  tokenClient.requestAccessToken({ prompt: '' });
+}
+if (gapiInited) resolve();
       });
     };
     gapiScript.onerror = reject;
