@@ -12,8 +12,8 @@ const DISCOVERY_DOC = 'https://sheets.googleapis.com/$discovery/rest?version=v4'
 // 3. OAuth 2.0 → Create credentials → Web app → add your site URL to origins
 // 4. Also create an API Key → restrict to Sheets API
 export const GOOGLE_CONFIG = {
-  CLIENT_ID: '342103515829-al8j1j92hnk1jpbkiiv9dke1s6tudjp2.apps.googleusercontent.com',
-  API_KEY: 'AIzaSyArY1WAy_sxSQ6u3fJOfuwzX6DGUs1E9_U',
+  CLIENT_ID: import.meta.env.VITE_GOOGLE_CLIENT_ID,
+API_KEY: import.meta.env.VITE_GOOGLE_API_KEY,
 };
 // ─────────────────────────────────────────────────────────────────────────────
 
