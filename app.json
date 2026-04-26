@@ -1,0 +1,25 @@
+{
+  "expo": {
+    "name": "Pro Trainer",
+    "slug": "bball-pro-trainer",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "backgroundColor": "#0A0A0F"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#0A0A0F"
+      },
+      "package": "com.yourname.bballprotrainer",
+      "googleServicesFile": "./google-services.json"
+    },
+    "scheme": "bballprotrainer",
+    "plugins": [
+      "expo-router",
+      "expo-secure-store"
+    ]
+  }
+}
