@@ -1,6 +1,8 @@
 import { useState, useEffect, useCallback } from "react";
 import { schedule } from "./schedule.js";
 import { RepTracker, ShotTracker, TimeTracker, CheckTracker } from "./Trackers.jsx";
+import WorkoutTimer from "./WorkoutTimer";
+import TrainingCalendar from "./TrainingCalendar";
 import {
   isConfigured, initGoogleAPI, signIn, signOut, isSignedIn,
   saveSession, loadHistory, loadShotHistory, GOOGLE_CONFIG,
@@ -300,7 +302,7 @@ export default function App() {
 
       {/* VIEW TABS */}
       <div style={{ display: "flex", padding: "10px 16px 0", gap: "6px", borderBottom: "1px solid #ffffff08" }}>
-        {["workout", ...(hasShotDay ? ["shot stats"] : []), "history"].map(tab => (
+        {["workout", ...(hasShotDay ? ["shot stats"] : []), "history", "calendar", "timer"].map(tab => (
           <button key={tab} onClick={() => setMainTab(tab)} style={{
             background: mainTab === tab ? day.color + "18" : "none",
             border: `1px solid ${mainTab === tab ? day.color : "#ffffff10"}`,
@@ -314,6 +316,8 @@ export default function App() {
 
       {/* ── HISTORY ── */}
       {mainTab === "history" && <HistoryTab color={day.color} />}
+      {mainTab === "calendar" && <TrainingCalendar />}
+      {mainTab === "timer" && <WorkoutTimer />}
 
       {/* ── SHOT STATS ── */}
       {mainTab === "shot stats" && (
